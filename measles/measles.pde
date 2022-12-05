@@ -1,31 +1,42 @@
 //Global Variables
 int appWidth, appHeight;
+int reset=1;
+color resetWhite=#FFFFFF;
+Boolean nightMode=false; //Basic Night Mode only changes measles
 //
 void setup() {
   //Display & Orientation
-  size(600, 400);
+  size(600, 400); 
   displayOrientation();
   appWidth = width;
   appHeight = height;
   //
-  //Population
-  //Theme: i.e. Face
+  population();
+  //Theme: i.e. Face (will work in portrait and landscape)
   faceSetup();
-  eyes();
-  nose();
-  mouth();
-  Measles();
   //Background Image (could be in draw too)
 }//End setup
 //
 void draw() {
   //OS System Button
   //Start Button | Measles Reset Button
-  //Theme: face & measles with different sizes and colors
-  }//End draw
+  //Theme: face & measles with different sizes and colours
+  measlesDynamic();
+  eyes();
+  mouth();
+  nose();
+}//End draw
 //
 void keyPressed() {
   //KeyBoard Shortcuts
+  if ( key=='N' | key=='n' ) { 
+    if ( nightMode==false ) {
+      nightMode=true;
+    } else {
+      nightMode=false;
+    }
+  }
+  println("Night Mode Feature", nightMode);
 }//End keyPressed
 //
 void mousePressed() {

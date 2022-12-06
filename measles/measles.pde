@@ -35,7 +35,7 @@ void keyPressed() {
     } else {
       nightMode=false;
     }
-  }
+  }    
   println("Night Mode Feature", nightMode);
 }//End keyPressed
 //
